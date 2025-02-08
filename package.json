@@ -1,0 +1,30 @@
+{
+  "name": "discord-token-price-bot",
+  "version": "1.0.0",
+  "description": "A Discord bot that provides information about the price of a crypto token.",
+  "module": "index.ts",
+  "type": "module",
+  "license": "MIT",
+  "author": {
+    "name": "Aerilym",
+    "email": "aerilym@pm.me",
+    "url": "https://github.com/aerilym"
+  },
+  "scripts": {
+    "start": "bun run index.ts",
+    "dev": "bun --hot run index.ts",
+    "format": "bunx biome format --write .",
+    "lint": "bunx biome lint --write .",
+    "check": "bunx biome check --write ."
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "discord.js": "^14.17.3"
+  }
+}
