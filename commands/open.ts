@@ -106,7 +106,7 @@ export const openNodeCommand = {
     }
 
     const { nodes } = await getOpenNodes();
-    const contract = nodes.find((node) => node.address === id);
+    const contract = nodes.find((node) => node.service_node_pubkey === id);
 
     if (!contract) {
       await interaction.reply('Open node not found!');
