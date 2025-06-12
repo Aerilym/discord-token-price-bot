@@ -27,17 +27,17 @@ export type ContributionContract = {
   status: CONTRIBUTION_CONTRACT_STATUS;
 };
 
-type OpenNodesData = {
-  ids: Array<string>;
-  nodes: Array<ContributionContract>;
-};
+// type OpenNodesData = {
+//   ids: Array<string>;
+//   nodes: Array<ContributionContract>;
+// };
 
 export async function getOpenNodes() {
-  const cachedData = cache.get<OpenNodesData>(CACHE_KEY.OPEN_NODES);
-
-  if (cachedData) {
-    return cachedData;
-  }
+  // const cachedData = cache.get<OpenNodesData>(CACHE_KEY.OPEN_NODES);
+  //
+  // if (cachedData) {
+  //   return cachedData;
+  // }
   const url = `${SESSION_STAKING_PORTAL_URL}/api/ssb/contract/contribution`;
 
   const response = await fetch(url);

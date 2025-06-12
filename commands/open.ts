@@ -92,7 +92,7 @@ export const openNodeCommand = {
 
     const { ids } = await getOpenNodes();
 
-    const filtered = ids.filter((choice) => choice.startsWith(focusedValue));
+    const filtered = ids.filter((choice) => choice.startsWith(focusedValue)).slice(0,24);
     await interaction.respond(filtered.map((choice) => ({ name: choice, value: choice })));
   },
   handler: async (interaction) => {
