@@ -8,12 +8,15 @@ if (!BOT_APP_ID) throw new Error('BOT_APP_ID is not set');
 
 const IGNORE_INVALID_COMMANDS = process.env.IGNORE_INVALID_COMMANDS;
 
-const PRICE_API_URL = process.env.PRICE_API_URL;
-if (!PRICE_API_URL) console.warn('PRICE_API_URL is not set, price commands will not work');
+const SESSION_NETWORK_API_URL = process.env.SESSION_NETWORK_API_URL!;
+if (!SESSION_NETWORK_API_URL)
+  console.warn('SESSION_NETWORK_API_URL is not set, network api commands will not work');
 
-const PRICE_TOKEN_SYMBOL = process.env.PRICE_TOKEN_SYMBOL;
-if (!PRICE_TOKEN_SYMBOL)
-  console.warn('PRICE_TOKEN_SYMBOL is not set, price commands will not work');
+const SESSION_STAKING_PORTAL_URL = process.env.SESSION_STAKING_PORTAL_URL!;
+if (!SESSION_STAKING_PORTAL_URL) throw new Error('SESSION_STAKING_PORTAL_URL is not set');
+
+const TOKEN_SYMBOL = process.env.TOKEN_SYMBOL!;
+if (!TOKEN_SYMBOL) throw new Error('TOKEN_SYMBOL is not set');
 
 const PRICE_SOURCE_DISCLAIMER = process.env.PRICE_SOURCE_DISCLAIMER;
 
@@ -21,7 +24,8 @@ export {
   BOT_TOKEN,
   BOT_APP_ID,
   IGNORE_INVALID_COMMANDS,
-  PRICE_API_URL,
-  PRICE_TOKEN_SYMBOL,
+  SESSION_NETWORK_API_URL,
+  SESSION_STAKING_PORTAL_URL,
+  TOKEN_SYMBOL,
   PRICE_SOURCE_DISCLAIMER,
 };
