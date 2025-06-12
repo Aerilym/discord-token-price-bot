@@ -23,7 +23,7 @@ async function getFormattedPriceData() {
     roundingMode: 'trunc',
   })} ${TOKEN_SYMBOL}`;
 
-  const minutesSinceUpdate = Math.trunc((priceData.t_price - Date.now() / 1000) / 60);
+  const minutesSinceUpdate = Math.trunc((priceData.t_stale - Date.now() / 1000) / 60);
 
   const relativeTimeSinceLastUpdate = new Intl.RelativeTimeFormat('en-US', {
     numeric: 'auto',
