@@ -27,11 +27,10 @@ export async function getNetworkApiData() {
     return;
   }
 
-  const cachedNetworkApiData = cache.get<NetworkApiInfoResponse>(CACHE_KEY.NETWORK_API_RESPONSE);
-
-  if (cachedNetworkApiData) {
-    return cachedNetworkApiData;
-  }
+  // const cachedNetworkApiData = cache.get<NetworkApiInfoResponse>(CACHE_KEY.NETWORK_API_RESPONSE);
+  // if (cachedNetworkApiData) {
+  //   return cachedNetworkApiData;
+  // }
 
   const response = await fetch(SESSION_NETWORK_API_URL);
   const json = (await response.json()) as NetworkApiInfoResponse;
@@ -48,11 +47,10 @@ type PriceDataWithCirculatingSupply = PriceData & {
 };
 
 export async function getPriceData() {
-  const cachedPriceData = cache.get<PriceDataWithCirculatingSupply>(CACHE_KEY.PRICE_DATA);
-
-  if (cachedPriceData) {
-    return cachedPriceData;
-  }
+  // const cachedPriceData = cache.get<PriceDataWithCirculatingSupply>(CACHE_KEY.PRICE_DATA);
+  // if (cachedPriceData) {
+  //   return cachedPriceData;
+  // }
 
   const networkApiInfoData = await getNetworkApiData();
 

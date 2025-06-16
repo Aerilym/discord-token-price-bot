@@ -117,8 +117,9 @@ client.on(Events.InteractionCreate, async (interaction) => {
 
 client.login(BOT_TOKEN);
 
-const GUILD_ID = '1366728801815629826';
+const GUILD_ID = '1163265397408149564';
 const CHANNEL_ID = '1380399036020035624';
+const CHANNEL_ID_GM = '1226773647025504287'
 
 const sentNodes = new Set<string>();
 
@@ -139,7 +140,7 @@ client.once(Events.ClientReady, async (readyClient) => {
     }
 
     // 3. Immediately send a message, then schedule every 10 minutes
-    const sendMessage = async () => {
+    const handleNewOpenNodes = async () => {
       const { nodes } = await getOpenNodes();
 
       const newNodes = [];
@@ -160,7 +161,7 @@ client.once(Events.ClientReady, async (readyClient) => {
     };
 
     // Schedule it to run every 1 minute
-    setInterval(sendMessage, 60 * 1000);
+    setInterval(handleNewOpenNodes, 60 * 1000);
   } catch (err) {
     console.error('Error setting up interval message:', err);
   }
